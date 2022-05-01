@@ -205,7 +205,7 @@ template {
     --font-size-small         : 1.2rem;
     --font-size-medium        : 1.4rem;
     --font-size-large         : 1.6rem;
-    --font-size-x-large       : 1.8px;
+    --font-size-x-large       : 1.8rem;
     --font-size-xx-large      : 3.2rem;
     --font-size-xx-super-large: 4.6rem;
 
@@ -214,20 +214,48 @@ template {
     --font-weight-semibold: 600;
     --font-weight-bold    : 700;
 
-    --line-height-base: 2.6rem;
+    --line-height-small: 2.1rem;
+    --line-height-base : 2.6rem;
+    --line-height-big  : 4rem;
+
+    /** SECTION **/
+    --section-padding: 5rem 0;
+
+    --section-title-color      : var(--color-white);
+    --section-title-font-size  : var(--font-size-xx-large);
+    --section-title-font-weight: var(--font-weight-bold);
+    --section-title-line-height: var(--line-height-big);
+
+    --section-tagline-color      : var(--color-white);
+    --section-tagline-margin     : 0 0 4rem;
+    --section-tagline-line-height: var(--line-height-small);
+
 
     /** NAVBAR **/
     --nav-item-font-family   : var(--font-family-base);
     --nav-item-font-size     : var(--font-size-small);
     --nav-item-font-weight   : var(--font-weight-bold);
     --nav-item-display       : inline-block;
-    --nav-item-margin        : 0 0 0 2rem;
+    --nav-item-margin        : 0 0 0 4.1rem;
     --nav-item-letter-spacing: 0.04rem;
+
+    --nav-icon-menu-color    : var(--color-white);
+    --nav-icon-menu-font-size: 2rem;
+
+    /** BUTTON **/
+    --button-display         : inline-block;
+    --button-color           : var(--color-white);
+    --button-backgorund-color: var(--color-primary);
+    --button-font-size       : var(--font-size-medium);
+    --button-border-radius   : 40px;
+    --button-padding         : 1.3rem 3.1rem;
+
 
     /** HEADER **/
     --header-padding: 3.2rem 0 0;
     --header-margin : 2.9 0 0;
 }
+
 
 /* Base
       ======================== */
@@ -278,15 +306,26 @@ a:hover {
     color: var(--color-primary);
 }
 
+.button {
+    color        : var(--button-color);
+    font-size    : var(--button-font-size);
+    display      : var(--button-display);
+    background   : var(--button-backgorund-color);
+    border-radius: var(--button-border-radius);
+    padding      : var(--button-padding);
+}
+
+.button:hover {
+    color: var(--button-color);
+}
 
 /*** 2. LAYOUT ***/
 
 /* Layout
     ==================== */
 .container {
-    width       : 960px;
-    margin-left : auto;
-    margin-right: auto;
+    max-width: 992px;
+    margin   : 0 auto;
 }
 
 /* Navbar
@@ -303,21 +342,44 @@ a:hover {
     margin: var(--nav-item-margin);
 }
 
-.nav .nav-item {
+.nav .nav-item .nav-link {
     font-family   : var(--nav-item-font-family);
     font-size     : var(--nav-item-font-size);
     font-weight   : var(--nav-item-font-weight);
     display       : var(--nav-item-display);
     letter-spacing: var(--nav-item-letter-spacing);
+    width         : max-content;
+}
+
+.navbar-menu {
+    margin-left: auto;
 }
 
 /* Header
     ==================== */
 
+#ckbox {
+    display: none;
+}
+
+.holberton_school-icon-menu {
+    cursor   : pointer;
+    color    : var(--nav-icon-menu-color);
+    font-size: var(--nav-icon-menu-font-size);
+    display  : none;
+}
+
+.custom-icon-x {
+    font-weight: var(--font-weight-bold);
+    font-size  : var(--font-size-x-large);
+    color      : var(--color-white);
+    cursor     : pointer;
+    display    : none;
+}
+
 .header-container {
-    display        : flex;
-    justify-content: space-between;
-    align-items    : center;
+    display    : flex;
+    align-items: center;
 }
 
 .header {
@@ -330,3 +392,117 @@ a:hover {
 
 /* Footer
     ==================== */
+
+
+
+/** 3. SECTION  **/
+
+.section {
+    padding: var(--section-padding);
+}
+
+.section-title {
+    font-size    : var(--section-title-font-size);
+    font-weight  : var(--section-title-font-weight);
+    color        : var(--section-title-color);
+    line-height  : var(--section-title-line-height);
+    margin-bottom: 0;
+}
+
+.section-tagline {
+    color      : var(--section-tagline-color);
+    margin     : var(--section-tagline-margin);
+    line-height: var(--section-tagline-line-height);
+}
+
+
+/* Section HERO
+============================= */
+
+.section-hero .section-inner {
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: flex-end;
+    margin-top     : 30vh;
+    min-height     : 60vh;
+    font-weight    : var(--font-weight-bold);
+    text-align     : center;
+}
+
+.section-inner>p:nth-child(4) {
+    color      : var(--color-white);
+    margin     : 6.3rem 0 0;
+    line-height: var(--line-height-base);
+    font-size  : var(--font-size-large);
+    text-align : center;
+}
+
+
+
+/** MEDIA QUERIES **/
+
+/*
+    --sm:  576px;
+    --md : 768px;
+    --lg : 992px;
+    --xl : 1200px;
+    --xxl: 1400px;
+    */
+
+@media only screen and (max-width: 576px) {
+
+    /** HEADER CONTAINER LOGIC **/
+
+    .header-container {
+        margin-left: 15px;
+        margin     : 0 0 0 15px;
+    }
+
+    .header-logo {
+        margin: 0 20px;
+    }
+
+    /** ICONS LOGIC **/
+    .holberton_school-icon-menu {
+        display: block;
+    }
+
+    input[type=checkbox]:checked~.navbar-menu {
+        display: block;
+    }
+
+    #ckbox:checked~label>.holberton_school-icon-menu {
+        display: none;
+    }
+
+    #ckbox:checked~label>.custom-icon-x {
+        display: block;
+    }
+
+    /** NAVBAR LOGIC **/
+    .navbar-menu {
+        display: none;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items   : center;
+        position      : fixed;
+        left          : 50%;
+        top           : 20vh;
+        margin-bottom : 30vh;
+        transition    : all 0.6s;
+    }
+
+    .nav .nav-item .nav-link {
+        font-size: var(--font-size-medium);
+        padding  : 15px;
+    }
+
+    .nav .nav-item+.nav-item {
+        margin: 0;
+    }
+
+
+}
