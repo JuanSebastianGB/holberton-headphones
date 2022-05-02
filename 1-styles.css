@@ -381,10 +381,22 @@ a:hover {
 .section-activities {
     display       : flex;
     flex-direction: column;
+    align-items   : center;
+    text-align    : center;
 }
 
 .row {
-    display: flex;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+}
+
+.card {
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    width          : 27rem;
+    height         : 5.2rem;
 }
 
 /* Hidden items
@@ -466,6 +478,68 @@ header.header {
     line-height: var(--button-line-height);
 }
 
+/* What We Do Section (Activities)
+    ==================== */
+
+.section-activities .section-header {
+    max-width : 637px;
+    margin    : 141px 0 97px 0;
+    text-align: center;
+}
+
+.section-activities .section-title {
+    font-size    : var(--font-size-xx-large);
+    font-weight  : var(--font-weight-semibold);
+    line-height  : 37.5px;
+    margin-bottom: 40px;
+    width        : 100%;
+}
+
+.section-activities .section-content {
+    font-size  : var(--font-size-large);
+    font-weight: var(--font-weight-regular);
+}
+
+.section-activities .row {
+    max-width: var(--header-max-width);
+}
+
+.section-activities .row {
+    list-style: none;
+}
+
+ul.row {
+    margin    : -1rem;
+    padding   : 0;
+    list-style: none;
+}
+
+[class*='col-'] {
+    margin: 1rem;
+}
+
+.section-activities span {
+    font-size: 9.4rem;
+    color    : var(--color-primary);
+}
+
+.section-activities .card-title {
+    font-size  : var(--font-size-x-large);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-base);
+    margin     : 1.3rem 0 2.4rem;
+}
+
+.section-activities .card-body {
+    font-size  : var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-base);
+}
+
+.section-activities {
+    margin-bottom: 10.1rem;
+}
+
 /* Footer
     ==================== */
 
@@ -532,4 +606,36 @@ header.header {
     input[type=checkbox]:checked~.navbar-menu .nav {
         display: block;
     }
+
+    /** What We Do! **/
+
+    .section-activities .row {
+        flex-direction: column;
+    }
+
+    .section-activities .section-header {
+        margin: 10.1rem 0 97px 0;
+    }
+
+    .section-activities .card {
+        margin-bottom: 18rem;
+    }
+
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+
+    /** What We Do! **/
+
+    .row {
+        flex-direction: row;
+        flex-wrap     : wrap;
+    }
+
+    .card {
+        margin-bottom: 30vh;
+    }
+
+
+
 }
