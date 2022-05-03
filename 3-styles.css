@@ -1,0 +1,641 @@
+/*** 1. GLOBAL  ***/
+
+/* Reset & and Normalize
+    ======================== */
+
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html {
+    line-height             : 1.15;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+main {
+    display: block
+}
+
+h1 {
+    font-size: 2em;
+    margin   : .67em 0
+}
+
+hr {
+    box-sizing: content-box;
+    height    : 0;
+    overflow  : visible
+}
+
+pre {
+    font-family: monospace, monospace;
+    font-size  : 1em
+}
+
+a {
+    background-color: transparent
+}
+
+abbr[title] {
+    border-bottom  : none;
+    text-decoration: underline;
+    text-decoration: underline dotted
+}
+
+b,
+strong {
+    font-weight: bolder
+}
+
+code,
+kbd,
+samp {
+    font-family: monospace, monospace;
+    font-size  : 1em
+}
+
+small {
+    font-size: 80%
+}
+
+sub,
+sup {
+    font-size     : 75%;
+    line-height   : 0;
+    position      : relative;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -.25em
+}
+
+sup {
+    top: -.5em
+}
+
+img {
+    border-style: none
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size  : 100%;
+    line-height: 1.15;
+    margin     : 0
+}
+
+button,
+input {
+    overflow: visible
+}
+
+button,
+select {
+    text-transform: none
+}
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
+    -webkit-appearance: button
+}
+
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
+    border-style: none;
+    padding     : 0
+}
+
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring,
+button:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+fieldset {
+    padding: .35em .75em .625em
+}
+
+legend {
+    box-sizing : border-box;
+    color      : inherit;
+    display    : table;
+    max-width  : 100%;
+    padding    : 0;
+    white-space: normal
+}
+
+progress {
+    vertical-align: baseline
+}
+
+textarea {
+    overflow: auto
+}
+
+[type=checkbox],
+[type=radio] {
+    box-sizing: border-box;
+    padding   : 0
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset    : -2px
+}
+
+[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font              : inherit
+}
+
+details {
+    display: block
+}
+
+summary {
+    display: list-item
+}
+
+template {
+    display: none
+}
+
+[hidden] {
+    display: none
+}
+
+/*# sourceMappingURL=normalize.min.css.map */
+
+
+/* Variables
+      ======================== */
+
+:root {
+    --color-white  : #FFFFFF;
+    --color-black  : #071629;
+    --color-primary: #FF6565;
+
+    --text-color: var(--color-black);
+
+    --font-family-base: 'Source Sans Pro';
+
+    --font-family-title: var(--font-family-base);
+
+    --font-size-small         : 1.2rem;
+    --font-size-medium        : 1.4rem;
+    --font-size-large         : 1.6rem;
+    --font-size-x-large       : 1.8rem;
+    --font-size-xx-large      : 3.2rem;
+    --font-size-xx-super-large: 4.6rem;
+
+
+    --font-weight-regular : 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold    : 700;
+
+    --line-height-small: 2.1rem;
+    --line-height-base : 2.6rem;
+    --line-height-big  : 4rem;
+
+
+
+    /** SECTION **/
+    --section-padding: 5rem 0;
+
+    --section-title-color      : var(--color-white);
+    --section-title-font-size  : var(--font-size-xx-large);
+    --section-title-font-weight: var(--font-weight-bold);
+    --section-title-line-height: var(--line-height-big);
+
+    --section-tagline-color      : var(--color-white);
+    --section-tagline-margin     : 0 0 4rem;
+    --section-tagline-line-height: var(--line-height-small);
+
+
+    /** NAVBAR **/
+    --nav-item-font-family   : var(--font-family-base);
+    --nav-item-font-size     : var(--font-size-small);
+    --nav-item-font-weight   : var(--font-weight-bold);
+    --nav-item-display       : inline-block;
+    --nav-item-margin        : 0 0 0 4.1rem;
+    --nav-item-letter-spacing: 0.04rem;
+
+    --nav-icon-menu-color    : var(--color-white);
+    --nav-icon-menu-font-size: 2rem;
+
+    /** BUTTON **/
+    --button-display         : inline-block;
+    --button-color           : var(--color-white);
+    --button-backgorund-color: var(--color-primary);
+    --button-font-size       : var(--font-size-medium);
+    --button-border-radius   : 40px;
+    --button-padding         : 1.3rem 3.1rem;
+    --button-line-height     : 17.6px;
+
+
+    /** HEADER **/
+    --header-max-width : 1039px;
+    --header-row-margin: 28px 0 0;
+
+
+    --header-padding: 3.2rem 0 0;
+    --header-margin : 2.9 0 4;
+}
+
+
+/* Base
+      ======================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size      : 62.5%;
+}
+
+body {
+    color         : var(--text-color);
+    font-family   : var(--font-family-base);
+    font-size     : var(--font-size-medium);
+    font-weight   : var(--font-weight-regular);
+    line-height   : var(--line-height-base);
+    display       : flex;
+    flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family-title);
+    font-weight: var(--font-weight-bold);
+}
+
+a {
+    text-decoration: none;
+    color          : var(--color-white);
+    font-weight    : var(--font-weight-bold);
+    font-size      : var(--font-size-medium);
+}
+
+a:visited {
+    font-style: italic;
+}
+
+a:hover {
+    color          : var(--color-primary);
+    text-decoration: none !important;
+}
+
+.nav {
+    list-style: none;
+}
+
+.nav-link:hover {
+    text-decoration: none;
+}
+
+.button {
+    color        : var(--button-color);
+    font-size    : var(--button-font-size);
+    display      : var(--button-display);
+    background   : var(--button-backgorund-color);
+    border-radius: var(--button-border-radius);
+    padding      : var(--button-padding);
+}
+
+.button:hover {
+    color: var(--button-color);
+}
+
+/*** 2. GRIDS ***/
+
+/* grids
+    ==================== */
+
+.main {
+    display       : flex;
+    flex-direction: column;
+    width         : 100%;
+    margin        : var(--main-margin);
+}
+
+.header-wrapper .header {
+    display       : flex;
+    flex-direction: column;
+}
+
+.header-wrapper .header-row {
+    display       : flex;
+    flex-direction: row;
+    align-items   : center;
+    margin        : 27.76px 10px 0;
+    flex-wrap     : wrap;
+}
+
+.header-row .nav {
+    display       : flex;
+    flex-direction: row
+}
+
+.header .header-body-inner {
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: center;
+}
+
+.header .header-body .container {
+    max-width : 637px;
+    margin    : 0 auto;
+    text-align: center;
+}
+
+.section-activities {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    text-align    : center;
+}
+
+.row {
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+}
+
+.card {
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    width          : 27rem;
+    height         : 5.2rem;
+}
+
+/* Hidden items
+    ==================== */
+#ckbox {
+    display: none;
+}
+
+/* Header
+    ==================== */
+
+.header-row {
+    justify-content: space-between;
+    max-width      : var(--header-max-width);
+    height         : var(--font-size-xx-large);
+    margin         : var(--header-row-margin);
+}
+
+.header-row .header-left {
+    display    : flex;
+    align-items: center;
+}
+
+header.header {
+    background     : url('./images/headphones_hero_1.jpg') top center no-repeat;
+    background-size: cover;
+    width          : 100%;
+}
+
+.header-row label .holberton_school-icon-menu,
+.header-row label .custom-icon-x {
+    cursor: pointer;
+    margin: 0 66px 0 21px;
+}
+
+.header-row label .custom-icon-x {
+    display: none;
+}
+
+.header-row label>span {
+    color: var(--color-white);
+}
+
+.header-row .header-logo-icon img {
+    height: var(--font-size-xx-large);
+    width : 161px;
+}
+
+.navbar-menu .nav-item+.nav-item {
+    margin-left: 41px;
+}
+
+.navbar-menu .nav-link {
+    font-size: var(--font-size-small);
+}
+
+.header-body {
+    color: var(--color-white);
+}
+
+.header-body .section-title {
+    font-size: var(--font-size-xx-large);
+    margin   : 23vw 0 0;
+}
+
+.header-body p {
+    font-size: var(--font-size-large)
+}
+
+.header-body .header-body-tagline {
+    margin: 0 0 40px;
+}
+
+.header-body .header-body-content {
+    margin: 64.54px 0 84px;
+}
+
+.header-body .button {
+    line-height: var(--button-line-height);
+}
+
+/* What We Do Section (Activities)
+    ==================== */
+
+.section-activities .section-header {
+    max-width : 637px;
+    margin    : 141px 0 97px 0;
+    text-align: center;
+}
+
+.section-activities .section-title {
+    font-size    : var(--font-size-xx-large);
+    font-weight  : var(--font-weight-semibold);
+    line-height  : 37.5px;
+    margin-bottom: 40px;
+    width        : 100%;
+}
+
+.section-activities .section-content {
+    font-size  : var(--font-size-large);
+    font-weight: var(--font-weight-regular);
+}
+
+.section-activities .row {
+    max-width: var(--header-max-width);
+}
+
+.section-activities .row {
+    list-style: none;
+}
+
+ul.row {
+    margin    : -1rem;
+    padding   : 0;
+    list-style: none;
+}
+
+[class*='col-'] {
+    margin: 1rem;
+}
+
+.section-activities span {
+    font-size: 9.4rem;
+    color    : var(--color-primary);
+}
+
+.section-activities .card-title {
+    font-size  : var(--font-size-x-large);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-base);
+    margin     : 1.3rem 0 2.4rem;
+}
+
+.section-activities .card-body {
+    font-size  : var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-base);
+}
+
+.section-activities {
+    margin-bottom: 10.1rem;
+}
+
+/* Footer
+    ==================== */
+
+
+
+/** 3. SECTION  **/
+
+
+
+
+/* Section ACTIVITIES
+============================= */
+
+
+/** MEDIA QUERIES **/
+
+/*
+    --sm:  576px;
+    --md : 768px;
+    --lg : 992px;
+    --xl : 1200px;
+    --xxl: 1400px;
+    */
+
+@media only screen and (max-width: 576px) {
+    .header-row .navbar-menu .nav {
+        flex-direction : column;
+        width          : 500px;
+        height         : 20vh;
+        align-items    : center;
+        justify-content: space-between;
+        display        : none;
+    }
+
+    .header-body {
+        margin-top: 10vh;
+    }
+
+    .header-row {
+        justify-content: flex-start;
+    }
+
+    .header-row label .holberton_school-icon-menu {
+        display: block;
+    }
+
+    .navbar-menu .nav-item+.nav-item {
+        margin: 0;
+    }
+
+    .holberton_school-icon-menu {
+        display    : blocK;
+        margin-left: 20px;
+    }
+
+    input[type=checkbox]:checked~label>.holberton_school-icon-menu {
+        display: none;
+    }
+
+    input[type=checkbox]:checked~label>.custom-icon-x {
+        display: block;
+    }
+
+    input[type=checkbox]:checked~.navbar-menu .nav {
+        display: block;
+    }
+
+    /** What We Do! **/
+
+    .section-activities .row {
+        flex-direction: column;
+    }
+
+    .section-activities .section-header {
+        margin: 10.1rem 0 97px 0;
+    }
+
+    .section-activities .card {
+        margin-bottom: 18rem;
+    }
+
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+
+    /** What We Do! **/
+
+    .row {
+        flex-direction: row;
+        flex-wrap     : wrap;
+    }
+
+    .card {
+        margin-bottom: 30vh;
+    }
+
+
+
+}

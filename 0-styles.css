@@ -192,9 +192,11 @@ template {
       ======================== */
 
 :root {
-    --color-white  : #FFFFFF;
-    --color-black  : #071629;
-    --color-primary: #FF6565;
+    --color-white    : #FFFFFF;
+    --color-black    : #040303;
+    --color-primary  : #FF6565;
+    --color-secondary: #071629;
+
 
     --text-color: var(--color-black);
 
@@ -218,49 +220,6 @@ template {
     --line-height-base : 2.6rem;
     --line-height-big  : 4rem;
 
-
-
-    /** SECTION **/
-    --section-padding: 5rem 0;
-
-    --section-title-color      : var(--color-white);
-    --section-title-font-size  : var(--font-size-xx-large);
-    --section-title-font-weight: var(--font-weight-bold);
-    --section-title-line-height: var(--line-height-big);
-
-    --section-tagline-color      : var(--color-white);
-    --section-tagline-margin     : 0 0 4rem;
-    --section-tagline-line-height: var(--line-height-small);
-
-
-    /** NAVBAR **/
-    --nav-item-font-family   : var(--font-family-base);
-    --nav-item-font-size     : var(--font-size-small);
-    --nav-item-font-weight   : var(--font-weight-bold);
-    --nav-item-display       : inline-block;
-    --nav-item-margin        : 0 0 0 4.1rem;
-    --nav-item-letter-spacing: 0.04rem;
-
-    --nav-icon-menu-color    : var(--color-white);
-    --nav-icon-menu-font-size: 2rem;
-
-    /** BUTTON **/
-    --button-display         : inline-block;
-    --button-color           : var(--color-white);
-    --button-backgorund-color: var(--color-primary);
-    --button-font-size       : var(--font-size-medium);
-    --button-border-radius   : 40px;
-    --button-padding         : 1.3rem 3.1rem;
-    --button-line-height     : 17.6px;
-
-
-    /** HEADER **/
-    --header-max-width : 1039px;
-    --header-row-margin: 28px 0 0;
-
-
-    --header-padding: 3.2rem 0 0;
-    --header-margin : 2.9 0 4;
 }
 
 
@@ -279,13 +238,13 @@ html {
 }
 
 body {
-    color         : var(--text-color);
-    font-family   : var(--font-family-base);
-    font-size     : var(--font-size-medium);
-    font-weight   : var(--font-weight-regular);
-    line-height   : var(--line-height-base);
-    display       : flex;
-    flex-direction: column;
+    background-color: var(--color-black);
+    color           : var(--color-white);
+    font-family     : var(--font-family-base);
+    font-size       : var(--font-size-medium);
+    font-weight     : var(--font-weight-regular);
+    line-height     : var(--line-height-base);
+    border          : 1px solid var(--color-black);
 }
 
 h1,
@@ -314,7 +273,7 @@ a:hover {
     text-decoration: none !important;
 }
 
-.nav {
+.navbar li {
     list-style: none;
 }
 
@@ -323,213 +282,206 @@ a:hover {
 }
 
 .button {
-    color        : var(--button-color);
-    font-size    : var(--button-font-size);
-    display      : var(--button-display);
-    background   : var(--button-backgorund-color);
-    border-radius: var(--button-border-radius);
-    padding      : var(--button-padding);
+    font-size       : var(--font-size-small);
+    color           : var(--color-white);
+    background-color: var(--color-primary);
+    padding         : 15px 30px;
+    font-weight     : var(--font-weight-bold);
+    text-transform  : uppercase;
+    border-radius   : 40px;
 }
 
 .button:hover {
-    color: var(--button-color);
+    opacity: 0.9;
 }
 
-/*** 2. GRIDS ***/
+.hero-title {
+    margin-bottom: 0;
+}
 
-/* grids
-    ==================== */
+.hero-subtitle {
+    font-size    : var(--font-size-medium);
+    margin-bottom: 5rem;
+}
 
-.main {
+.hero p {
+    max-width    : 637px;
+    margin-bottom: 35px;
+}
+
+li {
+    list-style: none;
+}
+
+/* Sections  */
+
+section {
     display       : flex;
     flex-direction: column;
-    width         : 100%;
-    margin        : var(--main-margin);
-}
-
-.header-wrapper .header {
-    display       : flex;
-    flex-direction: column;
-}
-
-.header-wrapper .header-row {
-    display       : flex;
-    flex-direction: row;
+    padding       : 125px 100px;
     align-items   : center;
-    margin        : 27.76px 10px 0;
-    flex-wrap     : wrap;
 }
 
-.header-row .nav {
-    display       : flex;
-    flex-direction: row
+section .title {
+    font-weight  : var(--font-weight-bold);
+    font-size    : var(--font-size-xx-large);
+    margin-bottom: 50px;
 }
 
-.header .header-body-inner {
+
+
+
+/** HEADER **/
+
+header {
     display        : flex;
-    flex-direction : column;
-    align-items    : center;
-    justify-content: center;
-}
-
-.header .header-body .container {
-    max-width : 637px;
-    margin    : 0 auto;
-    text-align: center;
-}
-
-.section-activities {
-    display       : flex;
-    flex-direction: column;
-}
-
-.row {
-    display: flex;
-}
-
-/* Hidden items
-    ==================== */
-#ckbox {
-    display: none;
-}
-
-/* Header
-    ==================== */
-
-.header-row {
-    justify-content: space-between;
-    max-width      : var(--header-max-width);
-    height         : var(--font-size-xx-large);
-    margin         : var(--header-row-margin);
-}
-
-.header-row .header-left {
-    display    : flex;
-    align-items: center;
-}
-
-header.header {
-    background     : url('./images/headphones_hero_1.jpg') top center no-repeat;
-    background-size: cover;
+    flex-direction : row;
     width          : 100%;
+    justify-content: space-between;
+    align-items    : center;
+    position       : absolute;
+    top            : 0;
+    left           : 0;
+    padding        : 25px 90px 0;
+    background     : transparent;
 }
 
-.header-row label .holberton_school-icon-menu,
-.header-row label .custom-icon-x {
-    cursor: pointer;
-    margin: 0 66px 0 21px;
+.hero .title {
+    margin: 34rem 0 0;
 }
 
-.header-row label .custom-icon-x {
+header .navbar {
+    display    : flex;
+    white-space: nowrap;
+}
+
+header .navbar li {
+    margin     : 0 3rem;
+    font-weight: var(--font-weight-bold);
+}
+
+header .navbar li a {
+    color: var(--color-white);
+}
+
+header .navbar li a:hover {
+    color: var(--color-primary);
+}
+
+header .menu-icon {
+    position   : relative;
+    cursor     : pointer;
+    padding    : 2.5rem;
+    user-select: none;
+}
+
+header .menu-icon .holberton_school-icon-menu {
+    position  : relative;
+    width     : 1.2rem;
+    height    : .2rem;
+    display   : block;
+    background: var(--color-white);
+    transition: all .2s ease-in-out;
+
+}
+
+header .menu-icon .holberton_school-icon-menu:before,
+header .menu-icon .holberton_school-icon-menu:after {
+    content   : '';
+    display   : block;
+    width     : 100%;
+    height    : 100%;
+    position  : absolute;
+    background: var(--color-white);
+    transition: all .2s ease-out;
+}
+
+header .menu-icon .holberton_school-icon-menu:before {
+    top  : .7rem;
+    width: 2rem;
+}
+
+header .menu-icon .holberton_school-icon-menu:after {
+    top  : -.7rem;
+    width: 2rem;
+}
+
+header .menu-icon,
+header .event-icon {
     display: none;
 }
 
-.header-row label>span {
-    color: var(--color-white);
+.event-icon:checked~nav {
+    display: block;
 }
 
-.header-row .header-logo-icon img {
-    height: var(--font-size-xx-large);
-    width : 161px;
+header .event-icon:checked+.menu-icon .holberton_school-icon-menu::before {
+    transform: rotate(-45deg);
 }
 
-.navbar-menu .nav-item+.nav-item {
-    margin-left: 41px;
+header .event-icon:checked+.menu-icon .holberton_school-icon-menu::after {
+    transform: rotate(45deg);
 }
 
-.navbar-menu .nav-link {
-    font-size: var(--font-size-small);
+header .event-icon:checked+.menu-icon .holberton_school-icon-menu::before,
+header .event-icon:checked+.menu-icon .holberton_school-icon-menu::after {
+    top: 0;
 }
 
-.header-body {
-    color: var(--color-white);
+header .event-icon:checked+.menu-icon .navicon {
+    background: transparent;
 }
 
-.header-body .section-title {
-    font-size: var(--font-size-xx-large);
-    margin   : 23vw 0 0;
-}
-
-.header-body p {
-    font-size: var(--font-size-large)
-}
-
-.header-body .header-body-tagline {
-    margin: 0 0 40px;
-}
-
-.header-body .header-body-content {
-    margin: 64.54px 0 84px;
-}
-
-.header-body .button {
-    line-height: var(--button-line-height);
-}
-
-/* Footer
-    ==================== */
+@media screen and (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
 
 
+    header .menu-icon {
+        display: initial;
+        order  : -1;
+    }
 
-/** 3. SECTION  **/
-
-
-
-
-/* Section ACTIVITIES
-============================= */
-
-
-/** MEDIA QUERIES **/
-
-/*
-    --sm:  576px;
-    --md : 768px;
-    --lg : 992px;
-    --xl : 1200px;
-    --xxl: 1400px;
-    */
-
-@media only screen and (max-width: 576px) {
-    .header-row .navbar-menu .nav {
-        flex-direction : column;
-        width          : 500px;
-        height         : 20vh;
-        align-items    : center;
-        justify-content: space-between;
+    header .navbar {
         display        : none;
+        flex-direction : column;
+        justify-content: center;
+        align-items    : center;
+        overflow       : hidden;
+        margin         : 0 200px;
+        transition     : all 0.5s ease;
     }
 
-    .header-body {
-        margin-top: 10vh;
+    header .navbar li {
+        margin        : 0 0;
+        padding-bottom: 3rem;
     }
+}
 
-    .header-row {
-        justify-content: flex-start;
-    }
+/** HERO SECTION **/
+.hero {
+    justify-content: center;
+    align-items    : center;
+    text-align     : center;
+    min-height     : 100vh;
+    z-index        : -1;
+}
 
-    .header-row label .holberton_school-icon-menu {
-        display: block;
-    }
+.hero .background-header-hero {
+    position       : absolute;
+    background     : url(./images/headphones_hero_1.jpg) top center no-repeat;
+    top            : 0;
+    left           : 0;
+    width          : 100%;
+    height         : 100%;
+    background-size: cover;
+    z-index        : -1;
+}
 
-    .navbar-menu .nav-item+.nav-item {
-        margin: 0;
-    }
 
-    .holberton_school-icon-menu {
-        display    : blocK;
-        margin-left: 20px;
-    }
 
-    input[type=checkbox]:checked~label>.holberton_school-icon-menu {
-        display: none;
-    }
-
-    input[type=checkbox]:checked~label>.custom-icon-x {
-        display: block;
-    }
-
-    input[type=checkbox]:checked~.navbar-menu .nav {
-        display: block;
-    }
+.hero .button {
+    box-shadow   : 5px 1px 15px 2px rgba(0, 0, 0, 0.57);
+    margin-bottom: 5rem;
 }
