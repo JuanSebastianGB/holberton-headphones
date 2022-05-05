@@ -192,13 +192,16 @@ template {
       ======================== */
 
 :root {
-    --color-white  : #FFFFFF;
-    --color-black  : #071629;
-    --color-primary: #FF6565;
+    --color-white    : #FFFFFF;
+    --color-black    : #040303;
+    --color-primary  : #FF6565;
+    --color-secondary: #071629;
 
-    --text-color: var(--color-black);
 
-    --font-family-base: 'Source Sans Pro';
+    --text-color: var(--color-white);
+
+    --font-family-base    : 'Source Sans Pro';
+    --font-family-headings: var(--font-family-base);
 
     --font-family-title: var(--font-family-base);
 
@@ -216,51 +219,50 @@ template {
 
     --line-height-small: 2.1rem;
     --line-height-base : 2.6rem;
-    --line-height-big  : 4rem;
-
-
-
-    /** SECTION **/
-    --section-padding: 5rem 0;
-
-    --section-title-color      : var(--color-white);
-    --section-title-font-size  : var(--font-size-xx-large);
-    --section-title-font-weight: var(--font-weight-bold);
-    --section-title-line-height: var(--line-height-big);
-
-    --section-tagline-color      : var(--color-white);
-    --section-tagline-margin     : 0 0 4rem;
-    --section-tagline-line-height: var(--line-height-small);
-
+    --line-height-big  : 3.8rem;
 
     /** NAVBAR **/
-    --nav-item-font-family   : var(--font-family-base);
-    --nav-item-font-size     : var(--font-size-small);
+    --nav-item-font-family   : var(--font-family-headings);
     --nav-item-font-weight   : var(--font-weight-bold);
+    --nav-item-font-size     : var(--font-size-medium);
+    --nav-item-letter-spacing: .04rem;
     --nav-item-display       : inline-block;
-    --nav-item-margin        : 0 0 0 4.1rem;
-    --nav-item-letter-spacing: 0.04rem;
-
-    --nav-icon-menu-color    : var(--color-white);
-    --nav-icon-menu-font-size: 2rem;
+    --nav-item-margin        : 0 0 0 4rem;
+    --nav-item-link-hover    : var(--color-white);
 
     /** BUTTON **/
-    --button-display         : inline-block;
-    --button-color           : var(--color-white);
-    --button-backgorund-color: var(--color-primary);
-    --button-font-size       : var(--font-size-medium);
-    --button-border-radius   : 40px;
-    --button-padding         : 1.3rem 3.1rem;
-    --button-line-height     : 17.6px;
+    --button-display              : inline-block;
+    --button-padding              : 1.5rem 3rem;
+    --button-border               : var(--color-primary) solid 0.2rem;
+    --button-color                : var(--color-white);
+    --button-text-decoration      : none;
+    --button-font-size            : var(--font-size-large);
+    --button-hover-color          : var(--color-white);
+    --button-hover-text-decoration: none;
+    --button-hover-background     : var(--color-primary);
 
+    /** SECTION **/
+    --section-padding            : 5rem 0;
+    --section-header-padding     : 0 0 3rem;
+    --section-header-align       : center;
+    --section-title-font-size    : var(--font-size-xx-large);
+    --section-title-font-weight  : var(--font-weight-bold);
+    --section-title-line-height  : var(--line-height-big);
+    --section-title-margin       : 0;
+    --section-title-color        : var(--color-white);
+    --section-tagline-transform  : lowercase;
+    --section-tagline-color      : var(--color-white);
+    --section-tagline-font-family: var(--font-family-headings);
+    --section-tagline-font-weight: var(--font-weight-bold);
+    --section-tagline-margin     : 0;
+    --section-body-padding       : 2rem 0 4rem;
+    --section-footer-padding     : 3rem 0 0;
+    --section-footer-align       : center;
 
-    /** HEADER **/
-    --header-max-width : 1039px;
-    --header-row-margin: 28px 0 0;
+    /** ICONS **/
+    --color-icons    : var(--color-primary);
+    --font-size-icons: 12.7rem;
 
-
-    --header-padding: 3.2rem 0 0;
-    --header-margin : 2.9 0 4;
 }
 
 
@@ -279,13 +281,12 @@ html {
 }
 
 body {
-    color         : var(--text-color);
-    font-family   : var(--font-family-base);
-    font-size     : var(--font-size-medium);
-    font-weight   : var(--font-weight-regular);
-    line-height   : var(--line-height-base);
-    display       : flex;
-    flex-direction: column;
+    color      : var(--color-white);
+    font-family: var(--font-family-base);
+    font-size  : var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-base);
+    border     : 1px solid var(--color-black);
 }
 
 h1,
@@ -302,7 +303,8 @@ a {
     text-decoration: none;
     color          : var(--color-white);
     font-weight    : var(--font-weight-bold);
-    font-size      : var(--font-size-medium);
+    font-size      : var(--font-size-small);
+    white-space    : nowrap;
 }
 
 a:visited {
@@ -314,7 +316,7 @@ a:hover {
     text-decoration: none !important;
 }
 
-.nav {
+.navbar li {
     list-style: none;
 }
 
@@ -323,190 +325,77 @@ a:hover {
 }
 
 .button {
-    color        : var(--button-color);
-    font-size    : var(--button-font-size);
-    display      : var(--button-display);
-    background   : var(--button-backgorund-color);
-    border-radius: var(--button-border-radius);
-    padding      : var(--button-padding);
+    display         : var(--button-display);
+    padding         : var(--button-padding);
+    border          : var(--button-border);
+    font-size       : var(--button-font-size);
+    color           : var(--button-color);
+    text-decoration : var(--button-text-decoration);
+    cursor          : pointer;
+    background-color: var(--color-primary);
+    border-radius   : 40px;
+    text-transform  : uppercase;
 }
 
 .button:hover {
-    color: var(--button-color);
+    color              : var(--button-hover-color);
+    text-decoration    : var(--button-hover-text-decoration);
+    background         : var(--button-hover-background);
+    transition-duration: var(--transition-duration);
+    transition-property: color, background-color;
+    opacity            : 0.9;
 }
 
-/*** 2. GRIDS ***/
-
-/* grids
-    ==================== */
-
-.main {
-    display       : flex;
-    flex-direction: column;
-    width         : 100%;
-    margin        : var(--main-margin);
+.button-primary {
+    color     : var(--color-white);
+    background: var(--color-primary);
 }
 
-.header-wrapper .header {
-    display       : flex;
-    flex-direction: column;
+.button-primary:hover {
+    color     : var(--color-primary);
+    background: var(--color-white);
 }
 
-.header-wrapper .header-row {
-    display       : flex;
-    flex-direction: row;
-    align-items   : center;
-    margin        : 27.76px 10px 0;
-    flex-wrap     : wrap;
+@media (max-width: 480px) {
+    html {
+        font-size: 57%;
+    }
 }
 
-.header-row .nav {
-    display       : flex;
-    flex-direction: row
+@media (min-width: 481px) and (max-width: 767px) {
+    html {
+        font-size: 60%;
+    }
 }
 
-.header .header-body-inner {
-    display        : flex;
-    flex-direction : column;
-    align-items    : center;
-    justify-content: center;
+.section p {
+    font-size: var(--font-size-large);
 }
 
-.header .header-body .container {
-    max-width : 637px;
-    margin    : 0 auto;
-    text-align: center;
+/* Helpers
+      ============================= */
+
+
+/*** 2. LAYOUT ***/
+
+/* Layout
+      ============================= */
+
+.container {
+    max-width   : 1000px;
+    margin-left : auto;
+    margin-right: auto;
 }
 
-.section-activities {
-    display       : flex;
-    flex-direction: column;
-    align-items   : center;
-    text-align    : center;
+.inner-container {
+    max-width   : 637px;
+    margin-left : auto;
+    margin-right: auto;
+    text-align  : center;
 }
 
-.row {
-    display        : flex;
-    align-items    : center;
-    justify-content: space-between;
-}
-
-.card {
-    display        : flex;
-    flex-direction : column;
-    justify-content: space-between;
-    width          : 27rem;
-    height         : 5.2rem;
-}
-
-/* Hidden items
-    ==================== */
-#ckbox {
-    display: none;
-}
-
-/* Header
-    ==================== */
-
-.header-row {
-    justify-content: space-between;
-    max-width      : var(--header-max-width);
-    height         : var(--font-size-xx-large);
-    margin         : var(--header-row-margin);
-}
-
-.header-row .header-left {
-    display    : flex;
-    align-items: center;
-}
-
-header.header {
-    background     : url('./images/headphones_hero_1.jpg') top center no-repeat;
-    background-size: cover;
-    width          : 100%;
-}
-
-.header-row label .holberton_school-icon-menu,
-.header-row label .custom-icon-x {
-    cursor: pointer;
-    margin: 0 66px 0 21px;
-}
-
-.header-row label .custom-icon-x {
-    display: none;
-}
-
-.header-row label>span {
-    color: var(--color-white);
-}
-
-.header-row .header-logo-icon img {
-    height: var(--font-size-xx-large);
-    width : 161px;
-}
-
-.navbar-menu .nav-item+.nav-item {
-    margin-left: 41px;
-}
-
-.navbar-menu .nav-link {
-    font-size: var(--font-size-small);
-}
-
-.header-body {
-    color: var(--color-white);
-}
-
-.header-body .section-title {
-    font-size: var(--font-size-xx-large);
-    margin   : 23vw 0 0;
-}
-
-.header-body p {
-    font-size: var(--font-size-large)
-}
-
-.header-body .header-body-tagline {
-    margin: 0 0 40px;
-}
-
-.header-body .header-body-content {
-    margin: 64.54px 0 84px;
-}
-
-.header-body .button {
-    line-height: var(--button-line-height);
-}
-
-/* What We Do Section (Activities)
-    ==================== */
-
-.section-activities .section-header {
-    max-width : 637px;
-    margin    : 141px 0 97px 0;
-    text-align: center;
-}
-
-.section-activities .section-title {
-    font-size    : var(--font-size-xx-large);
-    font-weight  : var(--font-weight-semibold);
-    line-height  : 37.5px;
-    margin-bottom: 40px;
-    width        : 100%;
-}
-
-.section-activities .section-content {
-    font-size  : var(--font-size-large);
-    font-weight: var(--font-weight-regular);
-}
-
-.section-activities .row {
-    max-width: var(--header-max-width);
-}
-
-.section-activities .row {
-    list-style: none;
-}
+/* Grid
+      ============================= */
 
 ul.row {
     margin    : -1rem;
@@ -514,137 +403,282 @@ ul.row {
     list-style: none;
 }
 
-[class*='col-'] {
+.row {
+    display        : flex;
+    justify-content: center;
+    flex-wrap      : wrap;
+}
+
+.col {
+    display       : flex;
+    flex-direction: column;
+
+}
+
+[class*='col'] {
     margin: 1rem;
 }
 
-.section-activities span {
-    font-size: 9.4rem;
-    color    : var(--color-primary);
+/* Header
+      ============================= */
+
+.header {
+    background     : url('./images/headphones_hero_1.jpg') top center no-repeat;
+    background-size: cover;
+    height         : auto;
+    margin-top     : -18px;
 }
 
-.section-activities .card-title {
-    font-size  : var(--font-size-x-large);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-base);
-    margin     : 1.3rem 0 2.4rem;
+.header .header-container {
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    padding        : 2rem;
 }
 
-.section-activities .card-body {
-    font-size  : var(--font-size-medium);
-    font-weight: var(--font-weight-regular);
-    line-height: var(--line-height-base);
-}
+/* menu btn */
 
-
-.section-activities .row {
-    margin-bottom: 100px;
+.header .menu-btn {
+    display: none;
 }
 
 
-/* Results
-    ==================== */
 
+/* Navbar
+      ============================= */
+.header-logo {
+    transform: scale(0.4);
+}
+
+.navbar-menu .nav {
+    display   : flex;
+    list-style: none;
+    margin    : 0;
+    padding   : 0;
+}
+
+nav .nav-item+.nav-item {
+    margin: var(--nav-item-margin);
+}
+
+@media (max-width: 767px) {
+
+
+    :root {
+        --nav-item-margin: 0;
+    }
+
+    .header .header-container {
+        flex-wrap      : wrap;
+        justify-content: center;
+        align-items    : center;
+    }
+
+    .header .header-container .navbar-menu {
+        flex: 0 0 100%;
+    }
+
+    .navbar-menu .nav-item {
+        padding: 1rem 0 1rem 15rem;
+    }
+
+    .header-logo,
+    .menu-icon {
+        flex: 0 0 20%;
+    }
+
+
+    .header .nav {
+        flex-direction: column;
+        max-height    : 0;
+        transition    : max-height .2s ease-out;
+        display       : none;
+    }
+
+    /* Display navbar logic */
+    .menu-btn:checked~.navbar-menu .nav {
+        display: block;
+    }
+
+    .menu-btn:checked .navbar-menu .nav {
+        max-height: 100%;
+        overflow  : inherit;
+    }
+
+    .header .menu-btn:checked+.menu-icon .navicon {
+        background: transparent;
+    }
+
+    .header .menu-btn:checked+.menu-icon .navicon::before {
+        transform: rotate(-45deg);
+    }
+
+    .header .menu-btn:checked+.menu-icon .navicon::after {
+        transform: rotate(45deg);
+    }
+
+    .header .menu-btn:checked+.menu-icon .navicon::before,
+    .header .menu-btn:checked+.menu-icon .navicon::after {
+        top: 0;
+    }
+
+
+    /* Hamburger Icon
+      ============================= */
+
+    .header .menu-icon {
+        cursor     : pointer;
+        padding    : 2.5rem;
+        position   : relative;
+        user-select: none;
+        order      : -1;
+    }
+
+    .header .menu-icon .navicon {
+        background: var(--color-white);
+        display   : block;
+        width     : 2rem;
+        height    : .2rem;
+        position  : relative;
+        transition: background .2s ease-out;
+    }
+
+    .header .menu-icon .navicon::before,
+    .header .menu-icon .navicon::after {
+        content   : "";
+        width     : 100%;
+        height    : 100%;
+        position  : absolute;
+        background: var(--color-white);
+        transition: all .2s ease-out;
+    }
+
+    .header .menu-icon .navicon::before {
+        top: .7rem;
+    }
+
+    .header .menu-icon .navicon::after {
+        top: -.7rem;
+    }
+}
 
 
 /* Footer
-    ==================== */
+      ============================= */
 
 
+/*** 3. SECTION ***/
 
-
-
-/** MEDIA QUERIES **/
-
-/*
-    --sm:  576px;
-    --md : 768px;
-    --lg : 992px;
-    --xl : 1200px;
-    --xxl: 1400px;
-    */
-
-@media only screen and (max-width: 576px) {
-    .header-row .navbar-menu .nav {
-        flex-direction : column;
-        width          : 500px;
-        height         : 20vh;
-        align-items    : center;
-        justify-content: space-between;
-        display        : none;
-    }
-
-    .header-body {
-        margin-top: 10vh;
-    }
-
-    .header-row {
-        justify-content: flex-start;
-    }
-
-    .header-row label .holberton_school-icon-menu {
-        display: block;
-    }
-
-    .navbar-menu .nav-item+.nav-item {
-        margin: 0;
-    }
-
-    .holberton_school-icon-menu {
-        display    : blocK;
-        margin-left: 20px;
-    }
-
-    input[type=checkbox]:checked~label>.holberton_school-icon-menu {
-        display: none;
-    }
-
-    input[type=checkbox]:checked~label>.custom-icon-x {
-        display: block;
-    }
-
-    input[type=checkbox]:checked~.navbar-menu .nav {
-        display: block;
-    }
-
-    /** What We Do! **/
-
-    .section-activities .row {
-        flex-direction: column;
-    }
-
-    .section-activities .section-header {
-        margin: 10.1rem 0 97px 0;
-    }
-
-    .section-activities .card {
-        margin-bottom: 18rem;
-    }
-
-    .section-activities .row {
-        margin-bottom: 15vw;
-    }
-
-    .section-activities .row:last-child {
-        margin-bottom: 10.1rem;
-    }
-
-
-
-
+/* Section (all styles)
+      ============================= */
+.section {
+    padding: var(--section-padding);
+    color  : var(--text-color);
 }
 
-@media only screen and (min-width: 577px) and (max-width: 768px) {
-
-    /** What We Do! **/
-
-    .row {
-        flex-direction: row;
-        flex-wrap     : wrap;
-    }
-
-    .card {
-        margin-bottom: 30vh;
-    }
-
+.section-header {
+    text-align: var(--section-header-align);
+    padding   : var(--section-header-padding);
 }
+
+.section-title {
+    font-size  : var(--section-title-font-size);
+    font-weight: var(--section-title-font-weight);
+    line-height: var(--section-title-line-height);
+    margin     : var(--section-title-margin);
+    color      : var(--section-title-color);
+}
+
+.section-tagline {
+    color         : var(--section-tagline-color);
+    font-family   : var(--section-tagline-font-family);
+    text-transform: var(--section-tagline-transform);
+    font-weight   : var(--section-tagline-font-weight);
+    margin        : var(--section-tagline-margin);
+}
+
+.section-body {
+    padding: var(--section-body-padding);
+}
+
+/* Section theming
+      ============================= */
+
+[data-section-theme="light"] {
+    --button-color       : var(--color-black);
+    --text-color         : var(--color-black);
+    --section-title-color: var(--color-black);
+    background           : var(--color-white);
+}
+
+/* Section HERO
+      ============================= */
+.section-hero .section-header {
+    padding-bottom: 1rem;
+    margin-top    : 10rem;
+}
+
+.section-hero .section-body {
+    padding: 5rem 4rem 10rem;
+}
+
+.section-hero .button {
+    margin-bottom: 6rem;
+}
+
+/* Section What we do
+      ============================= */
+
+.what-we-do-section .row {
+    margin: 1rem 0 10rem;
+}
+
+.what-we-do-section .col {
+    width        : 200px;
+    margin-bottom: 3rem;
+}
+
+[class*='holberton_school-icon-'] {
+    color    : var(--color-icons);
+    font-size: var(--font-size-icons);
+}
+
+/* Results
+      ============================= */
+.results-section {
+    background     : url('./images/headphones_hero_2.jpg') top center no-repeat;
+    background-size: cover;
+}
+
+.results-section .col {
+    background     : url(/images/pentagone.png) center no-repeat;
+    background-size: cover;
+    height         : 20rem;
+    width          : 21rem;
+    margin-bottom  : 3rem;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    margin         : 1rem 2.9rem;
+}
+
+.results-section .col h3 {
+    font-size : 5rem;
+    margin-top: 12rem
+}
+
+.results-section .col p {
+    margin-bottom: 5rem;
+    margin-top   : -3rem;
+}
+
+/*** 4. CARD ***/
+
+/* Card (all styles)
+      ============================= */
+
+/*** ARTICLE PAGE ***/
+
+
+/*** FORM ***/
