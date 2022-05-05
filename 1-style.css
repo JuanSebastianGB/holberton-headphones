@@ -198,7 +198,7 @@ template {
     --color-secondary: #071629;
 
 
-    --text-color: var(--color-white);
+    --text-color: var(--color-black);
 
     --font-family-base    : 'Source Sans Pro';
     --font-family-headings: var(--font-family-base);
@@ -258,10 +258,6 @@ template {
     --section-body-padding       : 2rem 0 4rem;
     --section-footer-padding     : 3rem 0 0;
     --section-footer-align       : center;
-
-    /** ICONS **/
-    --color-icons    : var(--color-primary);
-    --font-size-icons: 12.7rem;
 
 }
 
@@ -334,7 +330,6 @@ a:hover {
     cursor          : pointer;
     background-color: var(--color-primary);
     border-radius   : 40px;
-    text-transform  : uppercase;
 }
 
 .button:hover {
@@ -393,28 +388,6 @@ a:hover {
 /* Grid
       ============================= */
 
-ul.row {
-    margin    : -1rem;
-    padding   : 0;
-    list-style: none;
-}
-
-.row {
-    display        : flex;
-    justify-content: center;
-    flex-wrap      : wrap;
-}
-
-.col {
-    display       : flex;
-    flex-direction: column;
-
-}
-
-[class*='col'] {
-    margin: 1rem;
-}
-
 /* Header
       ============================= */
 
@@ -464,7 +437,7 @@ nav .nav-item+.nav-item {
         --nav-item-margin: 0;
     }
 
-    .header .header-container {
+    .header-container {
         flex-wrap      : wrap;
         justify-content: center;
         align-items    : center;
@@ -569,7 +542,6 @@ nav .nav-item+.nav-item {
       ============================= */
 .section {
     padding: var(--section-padding);
-    color  : var(--text-color);
 }
 
 .section-header {
@@ -597,16 +569,6 @@ nav .nav-item+.nav-item {
     padding: var(--section-body-padding);
 }
 
-/* Section theming
-      ============================= */
-
-[data-section-theme="light"] {
-    --button-color       : var(--color-black);
-    --text-color         : var(--color-black);
-    --section-title-color: var(--color-black);
-    background           : var(--color-white);
-}
-
 /* Section HERO
       ============================= */
 .section-hero .section-header {
@@ -621,24 +583,6 @@ nav .nav-item+.nav-item {
 .section-hero .button {
     margin-bottom: 6rem;
 }
-
-/* Section What we do
-      ============================= */
-
-.what-we-do-section .row {
-    margin: 1rem 0 10rem;
-}
-
-.what-we-do-section .col {
-    width        : 200px;
-    margin-bottom: 3rem;
-}
-
-[class*='holberton_school-icon-'] {
-    color    : var(--color-icons);
-    font-size: var(--font-size-icons);
-}
-
 
 /*** 4. CARD ***/
 
